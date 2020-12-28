@@ -11,7 +11,7 @@ if memo_type == 1
   puts "メモしたい内容を記入してください。"
   puts "完了したら　Ctrl + D を押します。"
   
-  array << gets.chomp
+  array << $stdin.read
   
   CSV.open(file_name, "w") do |csv|
         csv << array
@@ -23,7 +23,7 @@ elsif memo_type == 2
     puts "追記したい内容を記入してください"
     puts "完了したらCtrl + Dをおします"
     
-    array << gets.chomp
+    array << $stdin.read
     
     CSV.open(file_name, "a") do |csv|
         csv << array
